@@ -65,7 +65,7 @@
         cursor: pointer;
       }
     }
-  
+
     .content {
       .logo {
         // margin: 0.5rem;
@@ -73,6 +73,7 @@
         font-size:24px;
         color: #E91E63;
         background: #000000d1;
+        height: 24rem;
         padding-bottom: 32px;
         .mat-icon{
           height:160px !important;
@@ -81,7 +82,7 @@
         }
       }
     }
-  
+
     .mat-icon.mat-primary {
       color: #03A9F4!important;
   }
