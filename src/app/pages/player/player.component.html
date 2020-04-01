@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="content" [ngStyle]="{'background-image': 'url(' + filepic + ')'}" Style="background-size: cover;">
+    <div class="logo">
+      <!-- <mat-icon ngIf="filepic=='' || filepic==null">music_note</mat-icon> -->
+      <img src="https://cdn0.iconfinder.com/data/icons/Android-R2-png/512/Music-Android-R.png" alt=""
+        style=" border-radius: 50%; height: 146px; width: 146px; margin-top: 13px;">
+      <div style="color:white">Roshan Music Player</div>
+      <small style="position: absolute; left: 0px; font-size: 12px; width: 100%; text-align: center; color: #ffa019;">roshankrsoni1@gmail.com</small>
+    </div>
+
+
+   
+ <div style="display: flex;">
+    <mat-list color="primary" style="width:60%;">
+      <h3 mat-subheader>Songs</h3>
+      <mat-list-item *ngFor="let file of files; let i = index" (click)="openFile(file, i)">
+        <!-- <mat-icon color="primary" mat-list-icon>music_note</mat-icon> -->
+        <img src="{{file.photo}}" alt="" style="height:50px">
+        <h4 mat-line>{{ file.name }}</h4>
+        <h5 mat-line>by {{ file.artist }}</h5>
+        <mat-icon color="primary" *ngIf="currentFile.index === i && !state?.error" class="volup">volume_up</mat-icon>
+        <h6 *ngIf="currentFile.index === i && state?.error">ERROR</h6>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+    <mat-list color="primary"  style="width:40%; overflow: hidden;">
+      <h3  mat-subheader>Current Playing Song</h3>
+      <mat-list-item *ngIf="sessionSong">
+        <img src="{{sessionSong.photo}}" alt="" style="height:50px">
+        <h4 mat-line>{{ sessionSong.name }}</h4>
+        <h5 mat-line>by {{ sessionSong.artist }}</h5> 
+      </mat-list-item>
+    </mat-list>
+ </div>
+  </div>
+
+
+
+
+  <div class="media-footer">
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        {{ state?.readableCurrentTime }}
+        <mat-slider class="time-slider" min="0"  [max]="state?.duration" step="1" [value]="state?.currentTime"
+          (input)="onSliderChangeEnd($event)" [disabled]="state?.error || currentFile.index === undefined"></mat-slider>
+        {{ state?.readableDuration }}
+      </mat-toolbar-row>
+      <small style=" margin: auto; width: 28%; color: #7270ff;height: 23px;">
+        <marquee>{{SongName}} </marquee>
+      </small>
+      <mat-toolbar-row class="media-action-bar">
+        <button mat-button [disabled]="isFirstPlaying()" (click)="previous()">
+          <mat-icon mat-list-icon>skip_previous</mat-icon>
+        </button>
+
+        <button mat-button (click)="play()" [disabled]="state?.error" *ngIf="!state?.playing">
+          <mat-icon mat-list-icon>play_circle_filled</mat-icon>
+        </button>
+
+        <button mat-button (click)="pause()" *ngIf="state?.playing">
+          <mat-icon mat-list-icon>pause</mat-icon>
+        </button>
+
+        <button mat-button [disabled]="isLastPlaying()" (click)="next()">
+          <mat-icon mat-list-icon>skip_next</mat-icon>
+        </button>
+
+        &nbsp; &nbsp;
+        <mat-icon color="primary" (click)="showMyContainer=!showMyContainer" style="cursor: pointer;">volume_up
+        </mat-icon>
+        <mat-slider *ngIf="showMyContainer" value='{{sessionVol}}' min="0" max="10" style="position: absolute;
+        margin-left: 17%;" class="volumec" (input)="onVolumeSlider($event)">
+        </mat-slider>
+
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+</div>

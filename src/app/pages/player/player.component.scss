@@ -1,0 +1,110 @@
+.mat-toolbar.mat-primary {
+  background: #090304 !important;
+  color: #E91E63!important;
+}
+.mat-list-base .mat-list-item {
+  color: rgb(255, 255, 255);
+}
+
+.mat-list-item-content {
+  border-bottom: solid 1px #2d2d2d;
+}
+
+.volup{
+  position: absolute;
+    right: 3%;
+    background: white;
+    border-radius: 50%;
+    padding: 7px;
+    border: solid;
+}
+
+.hdr {
+  position: relative;
+  height: 20px;
+  padding-top: 29px;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  height: 25px;
+}
+
+.mat-button.mat-accent[disabled], .mat-button.mat-primary[disabled], .mat-button.mat-warn[disabled], .mat-button[disabled][disabled], .mat-icon-button.mat-accent[disabled], .mat-icon-button.mat-primary[disabled], .mat-icon-button.mat-warn[disabled], .mat-icon-button[disabled][disabled], .mat-stroked-button.mat-accent[disabled], .mat-stroked-button.mat-primary[disabled], .mat-stroked-button.mat-warn[disabled], .mat-stroked-button[disabled][disabled] {
+  color: rgba(158, 158, 158, 0.23)!important;
+}
+
+
+.mat-list-item-content {
+  cursor: pointer;
+}
+.mat-list-base {
+  padding: 1rem;
+  padding-top: 8px;
+  display: block;
+  -webkit-tap-highlight-color: transparent;
+  height: 20rem;
+  overflow: scroll;
+  overflow-x: hidden;
+  background: #000000eb;
+}
+.mat-list-base .mat-subheader {
+  color: rgb(255, 255, 255);
+}
+.mat-list-base .mat-list-item.mat-2-line, .mat-list-base .mat-list-option.mat-2-line {
+  height: 72px;
+  cursor: pointer;
+}
+.container {
+    .main-toolbar {
+      .spacer {
+        flex: 1 1 auto;
+      }
+      .toolbar-btn {
+        font-size: 16px;
+        margin-right:5px;
+        cursor: pointer;
+      }
+    }
+  
+    .content {
+      .logo {
+        // margin: 0.5rem;
+        text-align: center;
+        font-size:24px;
+        color: #E91E63;
+        background: #000000d1;
+        padding-bottom: 32px;
+        .mat-icon{
+          height:160px !important;
+          width:160px !important;
+          font-size:160px !important;
+        }
+      }
+    }
+  
+    .mat-icon.mat-primary {
+      color: #03A9F4!important;
+  }
+
+
+    .media-footer {
+      position: absolute;
+      bottom:0;
+      width:100%;
+      .time-slider {
+        width: 100% !important;
+        margin-left:20px;
+        margin-right:20px;
+      }
+      .media-action-bar {
+        width: 100%;
+        padding:2.5rem;
+        justify-content: center;
+        .mat-icon{
+          height:48px !important;
+          width:48px !important;
+          font-size:48px !important;
+        }
+      }
+    }
+  }
