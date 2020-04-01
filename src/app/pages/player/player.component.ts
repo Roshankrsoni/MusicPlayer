@@ -27,7 +27,7 @@ SliderChan:any;
     // get media files
     cloudService.getFiles().subscribe(files => {
       // this.filepic;
-  
+
       this.files = files;
       console.log(this.files);
     });
@@ -35,7 +35,7 @@ SliderChan:any;
 
   playStream(url) {
     this.audioService.playStream(url)
-    .subscribe(events => { 
+    .subscribe(events => {
       let Newevents = events;
       //  console.log(events.type);
     });
@@ -45,7 +45,7 @@ SliderChan:any;
     this.currentFile = { index, file };
     this.audioService.stop();
     this.playStream(file.url);
-    this.filepic = this.currentFile.file.photo; 
+    this.filepic = this.currentFile.file.photo;
 
     localStorage.setItem('SongNo', this.currentFile.index+0);
 
@@ -96,7 +96,7 @@ SliderChan:any;
 
   }
 
-  onVolumeSlider(e){ 
+  onVolumeSlider(e){
     this.audioService.changeVol(e.value);
     localStorage.setItem('SongVol', e.value);
 
@@ -105,6 +105,7 @@ SliderChan:any;
   ngOnInit(){
 
     this.init();
+    this.filepic = 'https://2.bp.blogspot.com/-Q1PKQJeT9eg/XNO5gsMt_eI/AAAAAAAANwg/24lca8lqlW8TGojxCrc-jGS_a-QicH6swCLcBGAs/w1200-h630-p-k-no-nu/color%2Bmusic%2Bfestival%2Bwolf.jpg';
     this.sessionVol = 10;
     this.SongName = 'Click any song to play';
       this.audioService.getState()
@@ -118,7 +119,7 @@ SliderChan:any;
       });
 
 
-            
+
   }
 
   init(){
@@ -131,7 +132,7 @@ SliderChan:any;
                 this.sessionSong = this.files[sIndex];
                 this.sessionVol = SongVol;
                 this.audioService.changeVol(this.sessionVol);
-               
+
                 // this.SliderChan = SliderChange;
                 // this.audioService.seekTo(this.SliderChan);
 

@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="content" [ngStyle]="{'background-image': 'url(' + filepic + ')'}" Style="background-size: cover;">
+  <div class="content" [ngStyle]="{'background-image': 'url(' + filepic + ')'}" Style="background-size: cover; height: 23rem;">
     <div class="logo">
       <!-- <mat-icon ngIf="filepic=='' || filepic==null">music_note</mat-icon> -->
       <img src="https://cdn0.iconfinder.com/data/icons/Android-R2-png/512/Music-Android-R.png" alt=""
@@ -9,8 +9,8 @@
     </div>
 
 
-   
- <div style="display: flex;">
+
+ <div style="display: flex; position: absolute; bottom: 128px;  width: 100%;">
     <mat-list color="primary" style="width:60%;">
       <h3 mat-subheader>Songs</h3>
       <mat-list-item *ngFor="let file of files; let i = index" (click)="openFile(file, i)">
@@ -28,7 +28,7 @@
       <mat-list-item *ngIf="sessionSong">
         <img src="{{sessionSong.photo}}" alt="" style="height:50px">
         <h4 mat-line>{{ sessionSong.name }}</h4>
-        <h5 mat-line>by {{ sessionSong.artist }}</h5> 
+        <h5 mat-line>by {{ sessionSong.artist }}</h5>
       </mat-list-item>
     </mat-list>
  </div>
